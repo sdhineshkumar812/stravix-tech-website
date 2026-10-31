@@ -1,0 +1,432 @@
+/* ==========================================================================
+   STRAVIX TECH — PREMIUM DARK TECHNOLOGY STUDIO DESIGN SYSTEM
+   Visual branding: Near-black textured surface, subtle carbon grain,
+                    directional lighting, brushed silver highlights,
+                    electric-lime green accent (#A3E635), charcoal black (#0B0F14).
+   ========================================================================== */
+
+:root {
+  /* Brand Core Color Tokens */
+  --bg-canvas: #0B0F14;          /* Pure near-black studio canvas */
+  --bg-surface: #111620;         /* Elevated charcoal card surface */
+  --bg-surface-elevated: #161D2B;/* High-elevation modal & popover */
+  --bg-subtle: #141A25;          /* Badge & input surface */
+  --bg-card: #111620;
+  --bg-charcoal-alt: #0E131C;    /* Alternate section background for visual rhythm */
+
+  /* Typography Colors */
+  --text-primary: #F8FAFC;        /* Crisp, high-contrast white */
+  --text-secondary: #94A3B8;      /* Brushed slate silver */
+  --text-muted: #64748B;          /* Muted helper & technical info */
+  --text-inverted: #0B0F14;
+
+  /* Electric Lime Green Accent (#A3E635) */
+  --accent-lime: #A3E635;
+  --accent-lime-hover: #BEF264;
+  --accent-lime-dark: #65A30D;
+  --accent-lime-subtle: rgba(163, 230, 53, 0.1);
+  --accent-lime-border: rgba(163, 230, 53, 0.35);
+  --accent-lime-glow: rgba(163, 230, 53, 0.25);
+
+  /* Brushed Silver & Metallic Borders */
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-subtle: #1C2433;
+  --border-strong: #2A364B;
+  --border-metallic: rgba(226, 232, 240, 0.22);
+  --border-metallic-hover: rgba(163, 230, 53, 0.5);
+
+  /* Typography System */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Fluid Typographic Scales */
+  --font-hero: clamp(2.35rem, 5vw + 0.8rem, 4.35rem);
+  --font-h1: clamp(1.95rem, 3.4vw + 0.6rem, 3.1rem);
+  --font-h2: clamp(1.55rem, 2.4vw + 0.4rem, 2.3rem);
+  --font-h3: clamp(1.22rem, 1.4vw + 0.3rem, 1.55rem);
+  --font-body-lg: clamp(1.05rem, 0.8vw + 0.5rem, 1.18rem);
+  --font-body-base: clamp(0.9375rem, 0.4vw + 0.5rem, 1.025rem);
+  --font-small: 0.875rem;
+  --font-xs: 0.75rem;
+
+  /* Container & Spacing */
+  --container-max: 1220px;
+  --container-narrow: 860px;
+  --section-spacing: clamp(4.5rem, 8vw, 7.5rem);
+  --section-spacing-sm: clamp(2.5rem, 5vw, 4rem);
+
+  /* Corner Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Premium Elevation Shadows */
+  --shadow-subtle: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(163, 230, 53, 0.25);
+  --shadow-metallic: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-canvas);
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-body-base);
+  line-height: 1.65;
+  color: var(--text-primary);
+  background-color: var(--bg-canvas);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  line-height: 1.18;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h1 { font-size: var(--font-hero); }
+h2 { font-size: var(--font-h1); }
+h3 { font-size: var(--font-h2); }
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+button {
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: 16px; /* Prevents auto-zoom on iOS */
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-hairline);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Visible Focus Management */
+:focus-visible {
+  outline: 2px solid var(--accent-lime);
+  outline-offset: 3px;
+}
+
+/* Core Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 3.5vw, 2.5rem);
+  padding-right: clamp(1rem, 3.5vw, 2.5rem);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 3.5vw, 2.5rem);
+  padding-right: clamp(1rem, 3.5vw, 2.5rem);
+}
+
+.section {
+  padding-top: var(--section-spacing);
+  padding-bottom: var(--section-spacing);
+  position: relative;
+}
+
+.section-sm {
+  padding-top: var(--section-spacing-sm);
+  padding-bottom: var(--section-spacing-sm);
+  position: relative;
+}
+
+/* Section Header Typography */
+.section-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-header.text-center {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.section-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-lime);
+  box-shadow: 0 0 10px var(--accent-lime);
+}
+
+.section-title {
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.section-description {
+  font-size: var(--font-body-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   BACKGROUND DESIGN:
+   Near-black textured surface with subtle carbon/leather micro-grain,
+   soft directional spotlight, restrained metallic highlight, and cinematic vignette.
+   ========================================================================== */
+
+.textured-studio-bg {
+  background-color: var(--bg-canvas);
+  background-image:
+    radial-gradient(ellipse 90% 50% at 50% -5%, rgba(163, 230, 53, 0.09) 0%, transparent 65%),
+    radial-gradient(ellipse 65% 40% at 50% 25%, rgba(226, 232, 240, 0.035) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, transparent 35%, rgba(11, 15, 20, 0.94) 100%),
+    url('/carbon-grain-texture.svg');
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-size: 100% 800px, 100% 550px, 100% 100%, 64px 64px;
+  background-position: center top, center top, center center, 0 0;
+}
+
+/* Alternate Dark Charcoal Section for Visual Rhythm without Visual Noise */
+.section-charcoal-alt {
+  background-color: var(--bg-charcoal-alt);
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+/* Metallic Brushed Text Utility */
+.metallic-text {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   BUTTON COMPONENT SYSTEM
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.45rem;
+  min-height: 48px; /* Comfortable touch target */
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--font-small);
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+  box-sizing: border-box;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Primary Button: Electric Lime Glow (#A3E635) */
+.btn-primary, .btn-accent {
+  background-color: var(--accent-lime);
+  color: #0B0F14;
+  border: 1px solid var(--accent-lime);
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(163, 230, 53, 0.25);
+}
+
+.btn-primary:hover, .btn-accent:hover {
+  background-color: var(--accent-lime-hover);
+  border-color: var(--accent-lime-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(163, 230, 53, 0.4);
+}
+
+.btn-primary:active, .btn-accent:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button: Brushed Silver / Charcoal Metallic */
+.btn-secondary {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+  color: #F8FAFC;
+  border: 1px solid var(--border-metallic);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-color: rgba(163, 230, 53, 0.5);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* WhatsApp Direct CTA Button */
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  border: 1px solid #25D366;
+  font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+  background-color: #22BF5B;
+  border-color: #22BF5B;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.3);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  min-height: 38px;
+  font-size: var(--font-xs);
+  border-radius: var(--radius-sm);
+}
+
+.btn-lg {
+  padding: 0.95rem 2rem;
+  min-height: 52px;
+  font-size: var(--font-body-base);
+  border-radius: var(--radius-lg);
+}
+
+/* ==========================================================================
+   CARD SURFACES & BADGES
+   ========================================================================== */
+
+.card-surface {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.card-surface:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* Badge System */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.badge-lime {
+  background-color: var(--accent-lime-subtle);
+  border-color: var(--accent-lime-border);
+  color: var(--accent-lime);
+  font-weight: 600;
+}
+
+.badge-demo {
+  background-color: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #FBBF24;
+  font-weight: 600;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile & Tablet Responsive Layouts */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
