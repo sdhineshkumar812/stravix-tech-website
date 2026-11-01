@@ -99,7 +99,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPackage }) => {
                 </h3>
 
                 {/* Price */}
-                <div style={{ marginBottom: '1rem' }}>
+                <div data-nosnippet style={{ marginBottom: '1rem' }}>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
                     <span
                       style={{

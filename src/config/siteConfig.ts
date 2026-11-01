@@ -2,7 +2,7 @@
 export const siteConfig = {
   name: 'STRAVIX TECH',
   tagline: 'Digital experiences built for what’s next.',
-  metaDescription: 'Stravix Tech engineers high-velocity web platforms, custom React applications, e-commerce, QR menus, and AI integrations.',
+  metaDescription: 'Stravix Tech builds modern, responsive business websites, custom React applications and e-commerce solutions for growing businesses.',
   
   // Official Contact Configuration
   contact: {
